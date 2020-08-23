@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AccountsService} from '../accounts.service';
 
 @Component({
@@ -8,11 +8,14 @@ import {AccountsService} from '../accounts.service';
 })
 export class AccountsListComponent implements OnInit {
 
-  constructor(private accountsService: AccountsService) { }
+  accounts: Account[];
+
+  constructor(private accountsService: AccountsService) {
+  }
 
   ngOnInit(): void {
     this.accountsService.getAllAccounts()
-      .subscribe(accountsListFromBacked => console.log(accountsListFromBacked));
+      .subscribe(accountsListFromBacked => this.accounts = accountsListFromBacked);
   }
 
 }

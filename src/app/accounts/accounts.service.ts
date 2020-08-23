@@ -14,6 +14,7 @@ export class AccountsService {
   }
 
   getAllAccounts(): Observable<Account[]> {
+    // AccountsService.URL + AccountsService.ACCOUNTS_API
     return this.httpClient.get<Account[]>(`${AccountsService.URL}${AccountsService.ACCOUNTS_API}`);
   }
 
