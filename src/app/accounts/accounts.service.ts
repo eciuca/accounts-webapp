@@ -19,8 +19,16 @@ export class AccountsService {
     return this.httpClient.get<Account[]>(`${AccountsService.URL}${AccountsService.ACCOUNTS_API}`);
   }
 
+  getAccountById(id: number): Observable<Account> {
+    return this.httpClient.get<Account>(`${AccountsService.URL}${AccountsService.ACCOUNTS_API}/${id}`);
+  }
+
   deleteAccountById(id: number): Observable<void> {
     return this.httpClient.delete<void>(`${AccountsService.URL}${AccountsService.ACCOUNTS_API}/${id}`);
+  }
+
+  updateAccount(account: Account): Observable<Account> {
+    return this.httpClient.put<Account>(`${AccountsService.URL}${AccountsService.ACCOUNTS_API}/${account.id}`, account);
   }
 
 }

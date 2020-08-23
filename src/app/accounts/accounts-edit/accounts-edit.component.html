@@ -1,0 +1,15 @@
+<div *ngIf="account">
+  <form #accountForm="ngForm" (ngSubmit)="save(accountForm.value)">
+    <input type="hidden" id="id" name="id" [(ngModel)]="account.id">
+    <label for="iban">IBAN</label>
+    <input type="text" id="iban" name="iban" placeholder="IBAN" [(ngModel)]="account.iban" readonly>
+    <br />
+    <label for="holder">Holder</label>
+    <input type="text" id="holder" name="holder" placeholder="Holder" [(ngModel)]="account.holder">
+    <br />
+    <label for="balance">Balance</label>
+    <input type="text" id="balance" name="balance" placeholder="Balance" [(ngModel)]="account.balance">
+    <br />
+    <input type="submit" value="Save changes" />
+  </form>
+</div>
