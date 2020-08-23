@@ -5,4 +5,8 @@ export class Account {
               public holder: string,
               public balance: number) {
   }
+
+  static newAccount(): Account {
+    return new Account(null, null, '', 0);
+  }
 }

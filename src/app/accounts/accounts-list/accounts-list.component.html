@@ -1,4 +1,4 @@
-<p>We have {{accounts?.length}} accounts!</p>
+<p>We have {{accounts?.length}} accounts! <a [routerLink]="['/accounts/new']">Create new account</a></p>
 <div>
   <table *ngIf="accounts">
     <thead>

@@ -1,8 +1,11 @@
+<div *ngIf="!account">
+  <p>The account data is missing</p>
+</div>
 <div *ngIf="account">
   <form #accountForm="ngForm" (ngSubmit)="save(accountForm.value)">
-    <input type="hidden" id="id" name="id" [(ngModel)]="account.id">
-    <label for="iban">IBAN</label>
-    <input type="text" id="iban" name="iban" placeholder="IBAN" [(ngModel)]="account.iban" readonly>
+    <input *ngIf="account.id" type="hidden" id="id" name="id" [(ngModel)]="account.id">
+    <label *ngIf="account.iban" for="iban">IBAN</label>
+    <input *ngIf="account.iban" type="text" id="iban" name="iban" placeholder="IBAN" [(ngModel)]="account.iban" readonly>
     <br />
     <label for="holder">Holder</label>
     <input type="text" id="holder" name="holder" placeholder="Holder" [(ngModel)]="account.holder">

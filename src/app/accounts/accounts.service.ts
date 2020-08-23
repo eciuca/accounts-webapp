@@ -31,4 +31,8 @@ export class AccountsService {
     return this.httpClient.put<Account>(`${AccountsService.URL}${AccountsService.ACCOUNTS_API}/${account.id}`, account);
   }
 
+  createNewAccount(account: Account): Observable<Account> {
+    return this.httpClient.post<Account>(`${AccountsService.URL}${AccountsService.ACCOUNTS_API}`, account);
+  }
+
 }
