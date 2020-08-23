@@ -1,1 +1,21 @@
 <p>We have {{accounts?.length}} accounts!</p>
+<div>
+  <table *ngIf="accounts">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>iban</th>
+        <th>holder</th>
+        <th>balance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let account of accounts">
+        <td>{{account.id}}</td>
+        <td>{{account.iban}}</td>
+        <td>{{account.holder}}</td>
+        <td>{{account.balance}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
