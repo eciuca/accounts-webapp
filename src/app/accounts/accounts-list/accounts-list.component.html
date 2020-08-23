@@ -7,6 +7,7 @@
         <th>iban</th>
         <th>holder</th>
         <th>balance</th>
+        <th>actions</th>
       </tr>
     </thead>
     <tbody>
@@ -15,6 +16,7 @@
         <td>{{account.iban}}</td>
         <td>{{account.holder}}</td>
         <td>{{account.balance}}</td>
+        <td><button (click)="delete(account.id)">Delete</button></td>
       </tr>
     </tbody>
   </table>

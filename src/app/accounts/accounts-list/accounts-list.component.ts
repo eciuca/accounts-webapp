@@ -15,8 +15,16 @@ export class AccountsListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loadAccountsFromBackend();
+  }
+
+  delete(id: number): void {
+    this.accountsService.deleteAccountById(id)
+      .subscribe(() => this.loadAccountsFromBackend());
+  }
+
+  loadAccountsFromBackend(): void {
     this.accountsService.getAllAccounts()
       .subscribe(accountsListFromBacked => this.accounts = accountsListFromBacked);
   }
-
 }
